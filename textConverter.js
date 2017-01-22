@@ -143,6 +143,7 @@ $(function() {
                 if (beforeLastCharBig == "Z" && lastCharBig == "Y") return "じゃ";
                 if (beforeLastCharBig == "Q" && lastCharBig == "Y") return "くゃ";
                 if (lastCharBig == "B") return beforeLastChar + "ば";
+                if (lastCharBig == "C") return beforeLastChar + "か";
                 if (lastCharBig == "D") return beforeLastChar + "だ";
                 if (lastCharBig == "F") return beforeLastChar + "ふぁ";
                 if (lastCharBig == "G") return beforeLastChar + "が";
@@ -189,6 +190,7 @@ $(function() {
                 if (beforeLastCharBig == "Z" && lastCharBig == "Y") return "じぃ";
                 if (beforeLastCharBig == "Q" && lastCharBig == "Y") return "くぃ";
                 if (lastCharBig == "B") return beforeLastChar + "び";
+                if (lastCharBig == "C") return beforeLastChar + "き";
                 if (lastCharBig == "D") return beforeLastChar + "ぢ";
                 if (lastCharBig == "F") return beforeLastChar + "ふぃ";
                 if (lastCharBig == "G") return beforeLastChar + "ぎ";
@@ -234,6 +236,7 @@ $(function() {
                 if (beforeLastCharBig == "Z" && lastCharBig == "Y") return "じゅ";
                 if (beforeLastCharBig == "Q" && lastCharBig == "Y") return "くゅ";
                 if (lastCharBig == "B") return beforeLastChar + "ぶ";
+                if (lastCharBig == "C") return beforeLastChar + "く";
                 if (lastCharBig == "D") return beforeLastChar + "づ";
                 if (lastCharBig == "F") return beforeLastChar + "ふ";
                 if (lastCharBig == "G") return beforeLastChar + "ぐ";
@@ -278,6 +281,7 @@ $(function() {
                 if (beforeLastCharBig == "Z" && lastCharBig == "Y") return "じぇ";
                 if (beforeLastCharBig == "Q" && lastCharBig == "Y") return "くぇ";
                 if (lastCharBig == "B") return beforeLastChar + "べ";
+                if (lastCharBig == "C") return beforeLastChar + "け";
                 if (lastCharBig == "D") return beforeLastChar + "で";
                 if (lastCharBig == "F") return beforeLastChar + "ふぇ";
                 if (lastCharBig == "G") return beforeLastChar + "げ";
@@ -322,6 +326,7 @@ $(function() {
                 if (beforeLastCharBig == "Z" && lastCharBig == "Y") return "じょ";
                 if (beforeLastCharBig == "Q" && lastCharBig == "Y") return "くょ";
                 if (lastCharBig == "B") return beforeLastChar + "ぼ";
+                if (lastCharBig == "C") return beforeLastChar + "こ";
                 if (lastCharBig == "D") return beforeLastChar + "ど";
                 if (lastCharBig == "F") return beforeLastChar + "ふぉ";
                 if (lastCharBig == "G") return beforeLastChar + "ご";
