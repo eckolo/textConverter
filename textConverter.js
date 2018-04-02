@@ -1,6 +1,6 @@
 $(function() {
-    var consonant = ["", "b", "c", "d", "f", "g", "h", "j", "k", "l", "n", "m", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    var vowel = ["a", "e", "i", "o", "u"];
+    var consonants = ["", "b", "c", "d", "f", "g", "h", "j", "k", "l", "n", "m", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var vowels = ["a", "e", "i", "o", "u"];
 
     converteText = (originText) => {
         var outputString = "";
@@ -30,9 +30,15 @@ $(function() {
                 return originChar;
 
             default:
-                return codeToChar(originChar.charCodeAt(0));
+                return `${codeToChar(originChar.charCodeAt(0))} `;
         }
     }
 
-    codeToChar = (onceCode) => consonant[onceCode % consonant.length] + vowel[Math.floor(onceCode / consonant.length) % vowel.length];
+    codeToChar = (onceCode) => {
+        var vowel = vowels[onceCode % vowels.length];
+        var consonant = consonants[Math.floor(onceCode / vowels.length) % consonants.length];
+        var nextIndex = Math.floor(Math.floor(onceCode / vowels.length) / consonants.length);
+        var nextChar = nextIndex == 0 ? "" : codeToChar(nextIndex);
+        return `${nextChar}${consonant}${vowel}`;
+    }
 });
