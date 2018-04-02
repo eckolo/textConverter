@@ -17,12 +17,12 @@ $(function() {
         var onceCode;
         var onceCodeArray;
 
-        for (var index = 0; index < originText.length; index++) outputString += extractionChar(originText, index);
+        outputString = [].map.call(originText, extractionChar);
         return outputString;
     }
 
-    function extractionChar(originText, index) {
-        switch (originText.substr(index, 1)) {
+    function extractionChar(originChar) {
+        switch (originChar) {
             case "\r":
             case "\n":
             case "\r\n":
@@ -37,16 +37,12 @@ $(function() {
             case "。":
             case " ":
             case "　":
-                return originText.substr(index, 1);
+                return originChar;
 
             default:
-                return codeToChar(originText.charCodeAt(index));
-                //return codeToChar(originText.charCodeAt(index) % (16 * 16)) + codeToChar(Math.floor(originText.charCodeAt(index) / (16 * 16)));
+                return codeToChar(originChar.charCodeAt(0));
         }
     }
 
-    function codeToChar(onceCode) {
-        return consonant[onceCode % consonant.length] + vowel[Math.floor(onceCode / consonant.length) % vowel.length];
-        //return String.fromCharCode("a".charCodeAt() + onceCode % 26);
-    }
+    codeToChar = (onceCode) => consonant[onceCode % consonant.length] + vowel[Math.floor(onceCode / consonant.length) % vowel.length];
 });
