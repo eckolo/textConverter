@@ -1,16 +1,5 @@
 $(function() {
-
-    $("#mainForm").on("click", "#converteButton", function() {
-        $("#outputConverted").html(converteText($("#originString").val()));
-        $("#outputReConverted").html(convertStr($("#outputConverted").val()));
-    });
-
-    $("#mainForm").on("change", "#originString", function() {
-        $("#outputConverted").html(converteText($("#originString").val()));
-        $("#outputReConverted").html(convertStr($("#outputConverted").val()));
-    });
-
-    function convertStr(str) {
+    convertStr = (str) => {
         var targetChar, lastChar, beforeLastChar;
         var converted;
         var index;
@@ -75,7 +64,7 @@ $(function() {
         return converted + beforeLastChar + lastChar;
     }
 
-    function convertChar(targetChar, lastChar, beforeLastChar, isHead) {
+    convertChar = (targetChar, lastChar, beforeLastChar, isHead) => {
         var lastCharBig = lastChar.toUpperCase();
         var beforeLastCharBig = beforeLastChar.toUpperCase();
         switch (targetChar.toUpperCase()) {
@@ -311,7 +300,7 @@ $(function() {
         }
     }
 
-    function isalpha(c) {
+    isalpha = (c) => {
         return ((c >= "A" && c <= "Z") || (c >= "a" && c <= "z"));
     }
 });
