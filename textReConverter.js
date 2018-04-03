@@ -14,24 +14,16 @@ $(function() {
         originString :
         String.fromCharCode(consonantToCode(0, originString));
 
-    consonantToCode = (resultCode, originString) => {
+    consonantToCode = (resultCode, originString) => charToCode(resultCode, originString, consonants, vowelToCode);
+    vowelToCode = (resultCode, originString) => charToCode(resultCode, originString, vowels, consonantToCode);
+    charToCode = (resultCode, originString, charList, nextAction) => {
         if (originString == "") return resultCode;
 
         var top = originString.slice(0, 1);
         var remaining = originString.slice(1);
 
-        var nextCode = resultCode * consonants.length;
-        if (consonants.includes(top)) return vowelToCode(nextCode + consonants.indexOf(top), remaining);
-        else return vowelToCode(nextCode, originString);
-    }
-    vowelToCode = (resultCode, originString) => {
-        if (originString == "") return resultCode;
-
-        var top = originString.slice(0, 1);
-        var remaining = originString.slice(1);
-
-        var nextCode = resultCode * vowels.length;
-        if (vowels.includes(top)) return consonantToCode(nextCode + vowels.indexOf(top), remaining);
-        else return consonantToCode(nextCode, originString);
+        var nextCode = resultCode * charList.length;
+        if (charList.includes(top)) return nextAction(nextCode + charList.indexOf(top), remaining);
+        else return nextAction(nextCode, originString);
     }
 });
