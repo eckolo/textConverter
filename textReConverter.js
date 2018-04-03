@@ -12,7 +12,9 @@ $(function() {
 
     reExtractionChar = (originString) => specialChars.includes(originString) ?
         originString :
-        String.fromCharCode(consonantToCode(0, originString));
+        consonantToCode(0, originString) > 0 ?
+        String.fromCharCode(consonantToCode(0, originString)) :
+        "";
 
     consonantToCode = (resultCode, originString) => charToCode(resultCode, originString, consonants, vowelToCode);
     vowelToCode = (resultCode, originString) => charToCode(resultCode, originString, vowels, consonantToCode);
