@@ -1,14 +1,13 @@
 $(function() {
-    var consonants = ["", "b", "c", "d", "f", "g", "h", "j", "k", "l", "n", "m", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
-    var vowels = ["a", "e", "i", "o", "u"];
-    var specialChars = ["\r", "\n", "\r\n", "!", "?", "！", "？", "「", "」", "…", "、", "。", " ", "　"];
+    const consonants = ["", "b", "c", "d", "f", "g", "h", "j", "k", "l", "n", "m", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
+    const vowels = ["a", "e", "i", "o", "u"];
+    const specialChars = ["\r", "\n", "\r\n", "!", "?", "！", "？", "「", "」", "…", "、", "。", " ", "　"];
 
-    reConverteText = (originText) => {
-        var outputString = "";
-
-        outputString = [].map.call(originText.split(" "), reExtractionChar);
-        return outputString;
-    }
+    reConverteText = (originText) => originText
+        .split(" ")
+        .map(text => reExtractionChar(text))
+        .join("")
+        .replace("\r\n ", "\r\n");
 
     reExtractionChar = (originString) => specialChars.includes(originString) ?
         originString :
