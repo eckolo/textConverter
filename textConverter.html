@@ -4,18 +4,28 @@
     <title>textConverter</title>
     <meta charset="UTF-8">
 </head>
-<form id="mainForm">
-    <textarea id="originString" rows="12" cols="120"></textarea>
-    <br/>
-    <input type="button" id="converteButton" value="converting!!">
-    <br/>
-    <textarea id="outputConverted" rows="12" cols="120"></textarea>
-    <br/>
-    <textarea id="outputReConverted" rows="12" cols="120"></textarea>
-    <br/>
-    <textarea id="outputHiragana" rows="12" cols="120"></textarea>
-    <br/>
-</form>
+<table id="mainForm">
+    <tr>
+        <td>
+            <textarea id="originString" rows="12" cols="48" style="box-sizing: border-box; overflow-y: hidden; overflow-x: auto; padding-right: 20px;"></textarea>
+        </td>
+        <td valign="top">
+            <input type="button" id="converteButton" value="converting!!→">
+            <br/>
+            <input type="button" id="reconverteButton" value="←reconverting!!">
+        </td>
+        <td>
+            <textarea id="outputConverted" rows="12" cols="48" style="box-sizing: border-box; overflow-y: hidden; overflow-x: auto; padding-right: 20px;"></textarea>
+            <br/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"> </td>
+        <td>
+            <span id="outputHiragana"></span>
+        </td>
+    </tr>
+</table>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="dictionary.js"></script>
 <script type="text/javascript" src="textConverter.js"></script>

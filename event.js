@@ -1,13 +1,10 @@
 $(function() {
     $("#mainForm").on("click", "#converteButton", function() {
-        $("#outputConverted").html(converteText($("#originString").val()));
-        $("#outputReConverted").html(reConverteText($("#outputConverted").val()));
+        $("#outputConverted").val(converteText($("#originString").val()));
         $("#outputHiragana").html(convertStr($("#outputConverted").val()));
     });
-
-    $("#mainForm").on("change", "#originString", function() {
-        $("#outputConverted").html(converteText($("#originString").val()));
-        $("#outputReConverted").html(reConverteText($("#outputConverted").val()));
+    $("#mainForm").on("click", "#reconverteButton", function() {
+        $("#originString").val(reConverteText($("#outputConverted").val()));
         $("#outputHiragana").html(convertStr($("#outputConverted").val()));
     });
 });
