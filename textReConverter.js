@@ -24,7 +24,8 @@ $(function() {
         var remaining = originString.slice(1);
 
         var nextCode = resultCode * charList.length;
-        if (charList.includes(top)) return nextAction(nextCode + charList.indexOf(top), remaining);
+        if (!consonants.includes(top) && !vowels.includes(top)) return nextAction(nextCode, remaining);
+        else if (charList.includes(top)) return nextAction(nextCode + charList.indexOf(top), remaining);
         else return nextAction(nextCode, originString);
     }
 });

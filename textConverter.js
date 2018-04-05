@@ -6,7 +6,7 @@ $(function() {
     converteText = (originText) => {
         var outputString = "";
 
-        outputString = [].map.call(originText, extractionChar);
+        outputString = [].map.call(originText, extractionChar).join("");
         return outputString;
     }
 
